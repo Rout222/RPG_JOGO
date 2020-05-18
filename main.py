@@ -1,5 +1,6 @@
 import pygame
-print("teste")
+import random
+
 class Tail:
     def __init__(self, nome, largura, altura, num_portas, e_comeco):
         self.nome = nome;
@@ -25,3 +26,33 @@ teatro = Tail("Teatro", 2, 1, 1, False)
 teatro_rotacionada = Tail("Teatro", 1, 2, 1, False)
 
 
+lista_tails = [lobby, teatro, corredor]
+
+
+pygame.init()
+
+window = pygame.display.set_mode((1920,1080))
+pygame.display.set_caption("Window")
+
+img_lobby = pygame.image.load("/home/aurelio/Documentos/git/RPG_JOGO/mansion_img/lobby.jpeg")
+
+
+#escolhendo tail inicial
+escolheu = False
+while escolheu == False:
+    tale_inicial = random.choice(lista_tails)
+    if tale_inicial.e_comeco == True:
+        escolheu = True
+
+
+gameLoop = True
+while gameLoop:
+
+    window.blit(img_lobby, (0,0))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            gameLoop = False
+    pygame.display.flip()
+
+pygame.quit()
