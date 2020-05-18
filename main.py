@@ -1,5 +1,5 @@
 import pygame
-
+print("teste")
 class Tail:
     def __init__(self, nome, largura, altura, num_portas, e_comeco):
         self.nome = nome;
