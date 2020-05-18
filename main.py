@@ -19,10 +19,10 @@ pygame.display.set_caption("Window")
 #escolhendo tail inicial
 
 # print(tale_inicial.nome)
-
+tile_inicial = retorna_tile_random(m.tiles)
 gameLoop = True
 while gameLoop:
-    aux = pygame.image.load("{}/{}".format(os.getcwd(), retorna_tile_random(m.tiles)))
+    aux = pygame.image.load("{}/{}".format(os.getcwd(), tile_inicial))
     window.blit(aux, (0,0))
 
     for event in pygame.event.get():
